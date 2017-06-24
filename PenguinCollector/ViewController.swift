@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  PenguinCollector need to start working on this again tomorrow
+//  PenguinCollector
 //
 //  Created by Toby Zitsman on 6/2/17.
 //  Copyright © 2017 Toby Zitsman. All rights reserved.
