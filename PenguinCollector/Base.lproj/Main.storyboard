@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qho-b2-L82">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qho-b2-L82">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Penguin View Controller-->
         <scene sceneID="pOZ-Np-8NW">
             <objects>
-                <viewController id="Kvv-pW-Mw8" sceneMemberID="viewController">
+                <viewController id="Kvv-pW-Mw8" customClass="PenguinViewController" customModule="PenguinCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yOW-Kl-Sw4"/>
                         <viewControllerLayoutGuide type="bottom" id="Ocr-FF-Vpd"/>
@@ -47,14 +47,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="crx-Ea-BFw">
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3051.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="crx-Ea-BFw">
                                 <rect key="frame" x="47" y="84" width="280" height="280"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="gfC-54-eMN"/>
                                     <constraint firstAttribute="width" constant="280" id="leC-LP-WpD"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPs-NU-UhT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPs-NU-UhT">
                                 <rect key="frame" x="47.5" y="405" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -63,6 +63,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUh-XL-Nxa">
                                 <rect key="frame" x="172" y="455" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="Kvv-pW-Mw8" eventType="touchUpInside" id="byD-rg-SxA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,10 +81,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="OMT-Vs-fch">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="jLc-aX-msm"/>
-                            <barButtonItem title="Photos" id="zwX-tj-wcd"/>
+                            <barButtonItem systemItem="camera" id="jLc-aX-msm">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="Kvv-pW-Mw8" id="eA1-RM-DiU"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="zwX-tj-wcd">
+                                <connections>
+                                    <action selector="photosTapped:" destination="Kvv-pW-Mw8" id="pd2-Bj-oW3"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="penguinImageView" destination="crx-Ea-BFw" id="NWR-bC-ttQ"/>
+                        <outlet property="titleTextField" destination="YPs-NU-UhT" id="KZC-Dx-zDv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXv-kB-a1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,4 +121,7 @@
             <point key="canvasLocation" x="128.80000000000001" y="-543.77811094452773"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IMG_3051.JPG" width="3264" height="2448"/>
+    </resources>
 </document>

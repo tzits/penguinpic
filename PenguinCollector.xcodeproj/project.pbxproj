@@ -13,6 +13,8 @@
 		370EB3121EE1B24700B7F266 /* PenguinCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 370EB3101EE1B24700B7F266 /* PenguinCollector.xcdatamodeld */; };
 		370EB3141EE1B24700B7F266 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 370EB3131EE1B24700B7F266 /* Assets.xcassets */; };
 		370EB3171EE1B24700B7F266 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 370EB3151EE1B24700B7F266 /* LaunchScreen.storyboard */; };
+		37B4C00D1F016F4C00281AFA /* IMG_3051.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 37B4C00C1F016F4C00281AFA /* IMG_3051.JPG */; };
+		37B4C00F1F01713800281AFA /* PenguinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4C00E1F01713800281AFA /* PenguinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		370EB3131EE1B24700B7F266 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		370EB3161EE1B24700B7F266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		370EB3181EE1B24700B7F266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37B4C00C1F016F4C00281AFA /* IMG_3051.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3051.JPG; sourceTree = "<group>"; };
+		37B4C00E1F01713800281AFA /* PenguinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenguinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				370EB3091EE1B24600B7F266 /* AppDelegate.swift */,
 				370EB30B1EE1B24700B7F266 /* ViewController.swift */,
+				37B4C00C1F016F4C00281AFA /* IMG_3051.JPG */,
 				370EB30D1EE1B24700B7F266 /* Main.storyboard */,
+				37B4C00E1F01713800281AFA /* PenguinViewController.swift */,
 				370EB3131EE1B24700B7F266 /* Assets.xcassets */,
 				370EB3151EE1B24700B7F266 /* LaunchScreen.storyboard */,
 				370EB3181EE1B24700B7F266 /* Info.plist */,
@@ -126,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B4C00D1F016F4C00281AFA /* IMG_3051.JPG in Resources */,
 				370EB3171EE1B24700B7F266 /* LaunchScreen.storyboard in Resources */,
 				370EB3141EE1B24700B7F266 /* Assets.xcassets in Resources */,
 				370EB30F1EE1B24700B7F266 /* Main.storyboard in Resources */,
@@ -142,6 +149,7 @@
 				370EB30C1EE1B24700B7F266 /* ViewController.swift in Sources */,
 				370EB3121EE1B24700B7F266 /* PenguinCollector.xcdatamodeld in Sources */,
 				370EB30A1EE1B24600B7F266 /* AppDelegate.swift in Sources */,
+				37B4C00F1F01713800281AFA /* PenguinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +313,7 @@
 				370EB31D1EE1B24700B7F266 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
