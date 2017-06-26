@@ -22,13 +22,31 @@ class PenguinViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var penguinImageView: UIImageView!
     
     var imagePicker = UIImagePickerController()
+
     
     @IBAction func addTapped(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let penguin = Penguin(context: context)
+        penguin.title = titleTextField.text
+        penguin.image = UIImagePNGRepresentation(penguinImageView.image!)!as NSData
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
     }
     
     @IBAction func photosTapped(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        penguinImageView.image = image
+        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
