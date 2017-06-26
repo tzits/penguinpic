@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" id="Ojl-gV-Zbv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0M7-iC-f05">
                             <connections>
-                                <segue destination="Kvv-pW-Mw8" kind="show" id="tJF-rA-enJ"/>
+                                <segue destination="Kvv-pW-Mw8" kind="show" identifier="penguinSegue" id="tJF-rA-enJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -82,6 +82,14 @@
                                     <action selector="addTapped:" destination="Kvv-pW-Mw8" eventType="touchUpInside" id="byD-rg-SxA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxO-qq-sRr">
+                                <rect key="frame" x="165" y="507" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="Kvv-pW-Mw8" eventType="touchUpInside" id="hh4-Lx-K8T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -109,6 +117,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="wUh-XL-Nxa" id="rCa-jO-CQM"/>
+                        <outlet property="deleteButton" destination="xxO-qq-sRr" id="Nul-iE-ZMs"/>
                         <outlet property="penguinImageView" destination="crx-Ea-BFw" id="NWR-bC-ttQ"/>
                         <outlet property="titleTextField" destination="YPs-NU-UhT" id="KZC-Dx-zDv"/>
                     </connections>

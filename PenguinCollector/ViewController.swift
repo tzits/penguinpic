@@ -48,7 +48,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.imageView?.image = UIImage(data: penguin.image! as Data)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let penguin = penguins[indexPath.row]
+        performSegue(withIdentifier: "penguinSegue", sender: penguin)
+        
+    }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! PenguinViewController
+        nextVC.penguin = sender as? Penguin
+    }
 }
 

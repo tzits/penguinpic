@@ -9,19 +9,29 @@
 import UIKit
 
 class PenguinViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        imagePicker.delegate = self
-        
-        // Do any additional setup after loading the view.
-    }
-
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var addUpdateButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var penguinImageView: UIImageView!
     
     var imagePicker = UIImagePickerController()
+    var penguin : Penguin? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imagePicker.delegate = self
+        if penguin != nil {
+            penguinImageView.image = UIImage(data: penguin!.image! as Data)
+            titleTextField.text = penguin?.title
+            addUpdateButton.setTitle("Update", for: .normal)
+        } else {
+            deleteButton.isHidden = true
+        }
+        // D o any additional setup after loading the view.
+    }
+
 
     
     @IBAction func addTapped(_ sender: Any) {
