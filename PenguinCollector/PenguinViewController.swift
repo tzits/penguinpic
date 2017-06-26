@@ -35,11 +35,20 @@ class PenguinViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     
     @IBAction func addTapped(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let penguin = Penguin(context: context)
-        penguin.title = titleTextField.text
-        penguin.image = UIImagePNGRepresentation(penguinImageView.image!)!as NSData
+        if penguin != nil {
+            penguin!.title = titleTextField.text
+            penguin!.image = UIImagePNGRepresentation(penguinImageView.image!)!as NSData
+        } else {
+        
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let penguin = Penguin(context: context)
+            penguin.title = titleTextField.text
+            penguin.image = UIImagePNGRepresentation(penguinImageView.image!)!as NSData
+        }
+        
+
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -59,6 +68,16 @@ class PenguinViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func deleteTapped(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(penguin!)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
+
+    }
     @IBAction func cameraTapped(_ sender: Any) {
+        imagePicker.sourceType = .camera
+
+        present(imagePicker, animated: true, completion: nil)
     }
 }
